@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import Link from 'next/link';
+import {VisibilityOff, Visibility} from '@mui/icons-material';
+
 
 const BalanceContainer = styled.div`
     display: flex;
@@ -10,12 +11,17 @@ const BalanceContainer = styled.div`
     color: #f8f8f8;
     background: #242424;
     padding-left: 30px;
-    padding-bottom: 10px;
     border-bottom: #f8f8f8 solid 1px;
     & div > strong{
         font-size: 1.5rem;
         margin-right: 10%;
     }
+    & > button{
+    border: none;
+    background: transparent;
+    color: #f8f8f8;
+  }
+
 `;
 type BalanceProps = {
     amount: number;
@@ -32,7 +38,7 @@ export default function Balance(props: BalanceProps) {
                     <strong>R$ ***,**</strong>
                 }
                 <button onClick={()=>setShow(!show)}>
-                    {show? 'Esconder': 'Mostrar'}
+                    {show? <Visibility/> : <VisibilityOff/> }
                 </button>
             </div>
         </BalanceContainer>

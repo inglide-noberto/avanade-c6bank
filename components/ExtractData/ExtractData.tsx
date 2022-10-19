@@ -4,6 +4,29 @@ import TypeDb from '../../types/typeDb';
 
 const ExtractDataContainer = styled.table`
   width: 100%;
+  border-collapse: collapse;
+  tbody td span {
+    font-size: 0.8em;
+    margin:0;
+    display: block;
+    line-height: 1;
+  }
+  thead tr {
+    text-align: left;
+  }  
+  tr{
+    line-height: 2em;
+  }
+  tbody tr:nth-child(odd){
+    background-color: #f2f2f2;
+  }
+  tbody tr:hover{
+    background-color: #ffa;
+    cursor: pointer;
+  }
+  tbody td, thead th {
+    padding-left: 2%;
+  }
 `;
 
 type ExtractDataProps = {
@@ -22,10 +45,17 @@ export default function ExtractData(props: ExtractDataProps) {
       <tbody>
         {props.db.map((item, index) => {
           return (
-            <tr key={index}>
-              <td>{item.description}</td>
-              <td>{item.date}</td>
-              <td>{item.amount}</td>
+            <tr key={item.id}>
+              <td>
+                <span>{item.type}</span>
+                {item.description}
+              </td>
+              <td>{new Date(item.date).toLocaleString('pt-br')}</td>
+              <td>{new Intl.NumberFormat('pt-br',
+                {
+                  style: 'currency',
+                  currency: 'BRL'
+                }).format(item.amount)}</td>
             </tr>
           )
         })}

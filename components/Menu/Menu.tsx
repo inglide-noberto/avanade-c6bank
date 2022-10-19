@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import { Home, FormatAlignJustify, Output, Payments, CreditCard, CreditScore } from '@mui/icons-material';
 
 const MenuContainer = styled.nav`
     display: flex;
@@ -34,11 +35,15 @@ const MenuContainer = styled.nav`
             line-height: 40px;
             border: solid 4px transparent;
             border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;    
+            border-bottom-right-radius: 5px; 
+            padding: 10px;
             &:hover{
                 background: #888;
                 border-left-color: #fffb19;
                 cursor: pointer;
+            }
+            span{
+                padding-left: 10px;
             }
         }
     }
@@ -49,24 +54,59 @@ export default function Menu() {
             <ul>
                 <li>
                     <Link href="/">
-                        {/*<Icon type="home"*/}
-                        <a>Inicio</a>
+                        <a> 
+                            <Home />
+                            <span/>
+                            Inicio
+                        </a>
                     </Link>
                 </li>
                 <li>
-                    <Link href="#"> Extrato </Link></li>
+                    <Link href="#">
+                        <a> 
+                            <FormatAlignJustify />
+                            <span/>
+                            Extrato
+                        </a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="#">
+                        <a> 
+                            <Output />
+                            <span/>
+                            Transferências
+                        </a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="#">
+                        <a> 
+                            <Payments />
+                            <span/>
+                            Pagamentos
+                        </a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="#">
+                        <a> 
+                            <CreditScore />
+                            <span/>
+                            Crédito
+                        </a>
+                    </Link>
+                </li>
 
                 <li>
-                    <Link href="#"> Transferências</Link></li>
-
-                <li>
-                    <Link href="#"> Pagamentos</Link></li>
-
-                <li>
-                    <Link href="#"> Crédito</Link></li>
-
-                <li>
-                    <Link href="#"> Cartões</Link></li>
+                    <Link href="#">
+                        <a> 
+                            <CreditCard />
+                            <span/>
+                            Cartões
+                        </a>
+                    </Link>
+                </li>
             </ul>
         </MenuContainer>
     )
