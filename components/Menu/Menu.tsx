@@ -6,7 +6,7 @@ const MenuContainer = styled.nav`
     display: flex;
     width: 100%;
     flex-direction: column;
-    width: 100%;
+    height: 150px;
     background: #242424;
     color: #f8f8f8;
     ul {
@@ -15,7 +15,16 @@ const MenuContainer = styled.nav`
         padding: 0;
         display: flex;        
         flex-direction: column;
-        padding-left: 30px;
+        height: 200px;
+        overflow: auto;
+        &::-webkit-scrollbar-thumb{
+            background: #242424;
+            outline: 1px solid #777777;
+            border-radius: 2px;
+        }
+        &::-webkit-scrollbar{
+            width: 6px;
+        }
         li{
             font-size: 1.2rem;
             font-weight: 400;

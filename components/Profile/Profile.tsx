@@ -3,17 +3,19 @@ import styled from '@emotion/styled';
 import { Avatar } from '@mui/material';
 
 const ProfileContainer = styled.div`
-    padding-top: 30px;
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 450px;
+    height: 400px;
     background-color: #242424;
     color: #f8f8f8;
     h2, h3{
         margin: 0;
+        font-weight: 400;
+        padding: 2px;
     }
 `
 

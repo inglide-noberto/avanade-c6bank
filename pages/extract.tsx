@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import SideBar from '../components/SideBar';
+import ExtractContent from '../components/ExtractContent';
 
 const ExtractContainer = styled.div`
   display: flex;
@@ -12,9 +13,7 @@ export default function ExtractPage() {
   return (
     <ExtractContainer>
       <SideBar />
-      <section>
-        <h1>Extracto</h1>
-      </section>
+      <ExtractContent/>
     </ExtractContainer>
   );
 };
