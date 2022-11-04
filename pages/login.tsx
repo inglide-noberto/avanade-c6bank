@@ -25,14 +25,6 @@ export default function LoginPage() {
     const [open, setOpen] = useState<boolean>(false);
     const [contador, setContador] = useState<number>(0);
 
-    // const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    //     e.preventDefault();
-    //     const data = new FormData(e.currentTarget);
-
-    //     setPassword(data.get('password'));
-
-    // }
-
     return (
         <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">

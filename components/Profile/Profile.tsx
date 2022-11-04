@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Avatar } from '@mui/material';
+import { CopyAll } from '@mui/icons-material';
+
 
 const ProfileContainer = styled.div`
     padding-top: 10px;
@@ -32,6 +34,11 @@ const Account = styled.div`
             width: 100%;
         }
     }
+    div.copy{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 `
 type ProfileProps = {
     name: string;
@@ -50,7 +57,9 @@ export default function Profile(props: ProfileProps) {
                     <p>336 - Banco C6 S.A</p>
                     <p>Ag: {props.agency} C/C: {props.accountNumber}</p>
                 </div>
-                <div>Ícone</div>
+                <div className='copy'>
+                    <CopyAll />
+                </div>
             </Account>
         </ProfileContainer>
     )

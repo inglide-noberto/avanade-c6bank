@@ -43,7 +43,7 @@ export default function ExtractData(props: ExtractDataProps) {
         </tr>
       </thead>
       <tbody>
-        {props.db.map((item, index) => {
+        {props.db.map((item) => {
           return (
             <tr key={item.id}>
               <td>
